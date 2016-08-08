@@ -1,4 +1,4 @@
-import constructors
+from . import constructors
 
 class ArabicCharacters(object):
     """Functions returning collection of characters, for Unicode 9.0"""

@@ -1,8 +1,8 @@
-import ArabicShaping
-import BaseForm
-from ArabicCharacters import ArabicCharacters
-from Char import Char
-from JoiningGroup import JoiningType, JoiningGroup
+from . import ArabicShaping
+from . import BaseForm
+from .ArabicCharacters import ArabicCharacters
+from .Char import Char
+from .JoiningGroup import JoiningType, JoiningGroup
 
 
 class ArabicChar(Char):
@@ -31,12 +31,12 @@ class ArabicChar(Char):
         """Check if character exists in Unicode's Arabic code blocks"""
         return self._chr in ArabicChar._ac.arabic()
 
-    def to_base_form(self):
-        """Return character's base form, without any dots or marks"""
+    def base_form(self):
+        """Return the letter's base form, without any dots or marks"""
+        b = self
         if self._chr in BaseForm.base_form:
             b = BaseForm.base_form[self._chr][0]
-            self._chr = b
-            self._ord = ord(b)
+        return ArabicChar(b)
 
     def is_haraka(self):
         """check if character is fatha, kasra or damma"""

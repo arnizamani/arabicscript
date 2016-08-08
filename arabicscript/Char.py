@@ -31,6 +31,11 @@ class Char(object):
             else:
                 raise InvalidCharacter()
 
+        if isinstance(char, Char):
+            self._chr = char._chr
+            self._ord = char._ord
+            return
+
         if not char or not isinstance(char, str) or len(char) > 1:
             raise InvalidCharacter()
 
