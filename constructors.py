@@ -6,12 +6,14 @@ def _arabic():
     characters.remove(chr(0x061D))
     return characters
 
+
 def _arabic_supplement():
     # Arabic Supplement: 0750 — 077F, Unicode 9.0
     characters = set()
     for x in range(0x0750, (0x077F + 1)):
         characters .add(chr(x))
     return characters
+
 
 def _arabic_extended_A():
     """Arabic Extended-A: 08A0 — 08FF, Unicode 9.0"""
@@ -22,6 +24,7 @@ def _arabic_extended_A():
     for x in range(0x08D4, (0x08FF + 1)):
         characters .add(chr(x))
     return characters
+
 
 def _arabic_presentation_forms_A():
     """Arabic Presentation Forms-A: FB50 — FDFF, Unicode 9.0"""
@@ -38,6 +41,7 @@ def _arabic_presentation_forms_A():
         characters.add(chr(x))
     return characters
 
+
 def _arabic_presentation_forms_B():
     """Arabic Presentation Forms-B: FE70 — FEFF, Unicode 9.0"""
     characters = set()
@@ -48,12 +52,14 @@ def _arabic_presentation_forms_B():
     characters.remove(chr(0xFEFE))
     return characters
 
+
 def _rumi_numeral_symbols():
     """Rumi Numeral Symbols: 10E60 — 10E7F, Unicode 9.0"""
     characters = set()
     for x in range(0x10E60, (0x10E7E + 1)):
         characters.add(chr(x))
     return characters
+
 
 def _arabic_mathematical_alphabetic_symbols():
     """Arabic Mathematical Alphabetic Symbols: 1EE00 — 1EEFF, Unicode 9.0"""
@@ -85,6 +91,7 @@ def _arabic_mathematical_alphabetic_symbols():
             characters.add(chr(x))
 
     return characters
+
 
 def meem_like(self):
     meems = {0x0645, # meem

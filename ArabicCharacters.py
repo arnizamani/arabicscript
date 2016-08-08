@@ -68,3 +68,16 @@ class ArabicCharacters(object):
                  }
         return {chr(c) for c in meems}
 
+    def semicolons(self):
+        semicolons = {
+            0x003B, # SEMICOLON
+            0x061B, # ARABIC SEMICOLON
+            0x204F, # REVERSED SEMICOLON
+            0x1364, # ETHIOPIC SEMICOLON
+            0xA6F6, # BAMUM SEMICOLON
+            0xFF1B, # FULL-WIDTH SEMICOLON
+            0xFE14, # PRESENTATION FORM FOR VERTICAL SEMICOLON
+            0xFE54, # SMALL SEMICOLON
+
+        }
+        return {chr(c) for c in semicolons}

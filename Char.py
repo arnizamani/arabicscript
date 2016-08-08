@@ -65,7 +65,7 @@ class Char(object):
         return self._chr
 
     def __repr__(self):
-        return format(self._ord, '04x').upper()
+        return self._chr # format(self._ord, '04x').upper()
 
     def __hash__(self):
         return hash(self._ord)
