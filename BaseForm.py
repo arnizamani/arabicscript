@@ -2,32 +2,30 @@
 # Dictionary where
 # key: is an Arabic letter (only letters are included, no other characters such as
 #   diacritic marks and punctuation marks)
-# value: the base form of the key (dotless and without any marks), which is either
-#       — a single character (string): number of dots is assumed to be zero
-#       — a pair with:
-#           0: a single character (string)
-#           1: number of dots, which is either:
-#               — a single number (number of dots)
-#               — a pair where:
-#                   0: number of dots in isolated and final forms
-#                   1: number of dots in initial and medial forms
+# value: the base form of the key (dotless and without any marks), which is a pair:
+#    value[0]: a single character (string)
+#    value[1]: number of dots, which is either:
+#           — a single number (number of dots)
+#           — a pair where:
+#               0: number of dots in isolated and final forms
+#               1: number of dots in initial and medial forms
 
 base_form = {
     # Hamza
     chr(0x0621): (chr(0x0621), 0),  # Hamza
     chr(0x06FD): (chr(0x0621), 0),  # Sindhi Aeen
     # Alef
-    chr(0x0622): (chr(0x0627), 0),  # alef with maddah above
-    chr(0x0623): (chr(0x0627), 0),  # alef with hamza above
-    chr(0x0625): (chr(0x0627), 0),  # alef with hamza below
-    chr(0x0627): (chr(0x0627), 0),  # alef
-    chr(0x0671): (chr(0x0627), 0),  # hamzat al-wasl
-    chr(0x0672): (chr(0x0627), 0),  # alef with wavy hamza above
-    chr(0x0673): (chr(0x0627), 0),  # alef with wavy hamza below
-    chr(0x0675): (chr(0x0627), 0),  # high hamza alef
-    chr(0x0773): (chr(0x0627), 0),  # alef with two above
-    chr(0x0774): (chr(0x0627), 0),  # alef with three above
-    chr(0x08AD): (chr(0x08AD), 0),  # low alef
+    chr(0x0622): (chr(0x0627), 0),  # Alef with maddah above
+    chr(0x0623): (chr(0x0627), 0),  # Alef with hamza above
+    chr(0x0625): (chr(0x0627), 0),  # Alef with hamza below
+    chr(0x0627): (chr(0x0627), 0),  # Alef
+    chr(0x0671): (chr(0x0627), 0),  # Hamzat al-wasl
+    chr(0x0672): (chr(0x0627), 0),  # Alef with wavy hamza above
+    chr(0x0673): (chr(0x0627), 0),  # Alef with wavy hamza below
+    chr(0x0675): (chr(0x0627), 0),  # High hamza alef
+    chr(0x0773): (chr(0x0627), 0),  # Alef with two above
+    chr(0x0774): (chr(0x0627), 0),  # Alef with three above
+    chr(0x08AD): (chr(0x08AD), 0),  # Low alef
     # Beh
     chr(0x0628): (chr(0x066E), 1),  # Beh
     chr(0x062A): (chr(0x066E), 2),  # Teh
