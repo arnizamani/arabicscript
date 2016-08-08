@@ -1,9 +1,9 @@
 import ArabicShaping
-
-from Char import Char
-from ArabicCharacters import ArabicCharacters
-from JoiningGroup import JoiningType, JoiningGroup
 import BaseForm
+from ArabicCharacters import ArabicCharacters
+from Char import Char
+from JoiningGroup import JoiningType, JoiningGroup
+
 
 class ArabicChar(Char):
     # self._ord
@@ -37,3 +37,17 @@ class ArabicChar(Char):
             b = BaseForm.base_form[self._chr][0]
             self._chr = b
             self._ord = ord(b)
+
+    def is_haraka(self):
+        """check if character is fatha, kasra or damma"""
+        raise NotImplementedError()
+
+    def is_tanween(self):
+        raise NotImplementedError()
+
+    def is_regular_tanween(self):
+        raise NotImplementedError()
+
+    def is_sukun(self):
+        raise NotImplementedError()
+

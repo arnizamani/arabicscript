@@ -1,12 +1,24 @@
 # -*- coding: utf-8 -*-
 import unicodedata
 
+
 class InvalidCharacter(Exception):
     pass
 
 
 class Char(object):
     """Unicode character"""
+    _semicolons = {
+        0x003B,  # SEMICOLON
+        0x061B,  # ARABIC SEMICOLON
+        0x204F,  # REVERSED SEMICOLON
+        0x1364,  # ETHIOPIC SEMICOLON
+        0xA6F6,  # BAMUM SEMICOLON
+        0xFF1B,  # FULL-WIDTH SEMICOLON
+        0xFE14,  # PRESENTATION FORM FOR VERTICAL SEMICOLON
+        0xFE54,  # SMALL SEMICOLON
+    }
+
     def __init__(self, char):
         self._ord = -1
         self._chr = ''
@@ -60,12 +72,15 @@ class Char(object):
     def isupper(self):
         return self._chr.isupper()
 
+    def issemicolon(self):
+        return self._ord in Char._semicolons
+
     # Builtin methods
     def __str__(self):
         return self._chr
 
     def __repr__(self):
-        return self._chr # format(self._ord, '04x').upper()
+        return self._chr
 
     def __hash__(self):
         return hash(self._ord)
@@ -78,7 +93,14 @@ class Char(object):
         return int(self._chr)
 
     def __eq__(self, other):
-        return self._ord == other._ord
+        if isinstance(other, str):
+            return self._chr == other
+
+        if isinstance(other, int):
+            return self._ord == other
+
+        if isinstance(other, Char):
+            return self._ord == other._ord
 
     def __lt__(self, other):
         return self._ord < other._ord

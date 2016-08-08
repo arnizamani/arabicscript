@@ -240,6 +240,7 @@ joining_groups = {
     0x08BD: JoiningGroup.African_Noon,
     0x08E2: JoiningGroup.No_Joining_Group,
 }
+
 joining_types = {
     0x0600: JoiningType.Non_Joining,
     0x0601: JoiningType.Non_Joining,
