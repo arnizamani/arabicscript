@@ -1,19 +1,20 @@
 from . import constructors
 
+
 class ArabicCharacters(object):
-    """Functions returning collection of characters, for Unicode 9.0"""
+    """Functions returning collections of Arabic characters, for Unicode 9.0"""
 
     def __init__(self):
         """ArabicCharacters(): pre-construct all sets of characters"""
-        self._arabic = constructors._arabic()
-        self._arabic_supplement = constructors._arabic_supplement()
-        self._arabic_extended_A = constructors._arabic_extended_A()
-        self._arabic_presentation_forms_A = constructors._arabic_presentation_forms_A()
-        self._arabic_presentation_forms_B = constructors._arabic_presentation_forms_B()
+        self._arabic = constructors.arabic()
+        self._arabic_supplement = constructors.arabic_supplement()
+        self._arabic_extended_A = constructors.arabic_extended_A()
+        self._arabic_presentation_forms_A = constructors.arabic_presentation_forms_A()
+        self._arabic_presentation_forms_B = constructors.arabic_presentation_forms_B()
         self._arabic_presentation_forms = set.union(self._arabic_presentation_forms_A, self._arabic_presentation_forms_B)
-        self._rumi_numeral_symbols = constructors._rumi_numeral_symbols()
+        self._rumi_numeral_symbols = constructors.rumi_numeral_symbols()
         self._arabic_mathematical_alphabetic_symbols = \
-            constructors._arabic_mathematical_alphabetic_symbols()
+            constructors.arabic_mathematical_alphabetic_symbols()
 
         self.unicode_arabic_chars = set.union(
             self._arabic,
@@ -63,21 +64,9 @@ class ArabicCharacters(object):
     def meem_like(self):
         meems = {0x0645, 0x06D8, 0x06E2, 0x06ED, 0x06FE,
                  0x0765, 0x0766, 0x08A7,
-                 0xFEE1, 0xFEE2, 0xFEE3, 0xFEE4, # Arabic presentation forms B
-                 0x1EE0C, 0x1EE2C, 0x1EE8C, 0x1EEAC, # Mathematical alphabetic symbols
+                 0xFEE1, 0xFEE2, 0xFEE3, 0xFEE4,      # Arabic presentation forms B
+                 0x1EE0C, 0x1EE2C, 0x1EE8C, 0x1EEAC,  # Mathematical alphabetic symbols
                  }
         return {chr(c) for c in meems}
 
-    def semicolons(self):
-        semicolons = {
-            0x003B, # SEMICOLON
-            0x061B, # ARABIC SEMICOLON
-            0x204F, # REVERSED SEMICOLON
-            0x1364, # ETHIOPIC SEMICOLON
-            0xA6F6, # BAMUM SEMICOLON
-            0xFF1B, # FULL-WIDTH SEMICOLON
-            0xFE14, # PRESENTATION FORM FOR VERTICAL SEMICOLON
-            0xFE54, # SMALL SEMICOLON
-
-        }
-        return {chr(c) for c in semicolons}
+    honorifics = {0x0610, 0x0611, 0x0612, 0x0613, 0x0614}

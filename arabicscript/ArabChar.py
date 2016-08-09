@@ -1,5 +1,5 @@
-from . import ArabicShaping
 from . import BaseForm
+from .ArabicShaping import ArabicShaping
 from .ArabicCharacters import ArabicCharacters
 from .Char import Char
 from .Joining import JoiningType, JoiningGroup
@@ -51,3 +51,6 @@ class ArabChar(Char):
     def is_sukun(self):
         raise NotImplementedError()
 
+    def is_honorific(self):
+        """Check if character is an honorific mark"""
+        return self._ord in ArabicCharacters.honorifics

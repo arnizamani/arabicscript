@@ -1,5 +1,6 @@
 from .ArabChar import ArabChar
 
+
 class ArabStr(object):
     """Class that represents strings containing Arabic text in Unicode"""
 

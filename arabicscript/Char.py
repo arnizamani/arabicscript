@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 import unicodedata
 
+from .UnicodeCharacters import UnicodeCharacters
+
 
 class InvalidCharacter(Exception):
     pass
@@ -8,16 +10,6 @@ class InvalidCharacter(Exception):
 
 class Char(object):
     """Unicode character"""
-    _semicolons = {
-        0x003B,  # SEMICOLON
-        0x061B,  # ARABIC SEMICOLON
-        0x204F,  # REVERSED SEMICOLON
-        0x1364,  # ETHIOPIC SEMICOLON
-        0xA6F6,  # BAMUM SEMICOLON
-        0xFF1B,  # FULL-WIDTH SEMICOLON
-        0xFE14,  # PRESENTATION FORM FOR VERTICAL SEMICOLON
-        0xFE54,  # SMALL SEMICOLON
-    }
 
     def __init__(self, char):
         self._ord = -1
@@ -36,11 +28,12 @@ class Char(object):
             self._ord = char._ord
             return
 
-        if not char or not isinstance(char, str) or len(char) > 1:
-            raise InvalidCharacter()
+        if isinstance(char, str) and len(char) == 1:
+            self._chr = char
+            self._ord = ord(self._chr)
+            return
 
-        self._chr = char
-        self._ord = ord(self._chr)
+        raise InvalidCharacter("Wrong type for initialization of Char: " + str(type(char)))
 
     def name(self):
         """Returns the unicode name of the character, or empty string"""
@@ -77,8 +70,11 @@ class Char(object):
     def isupper(self):
         return self._chr.isupper()
 
-    def issemicolon(self):
-        return self._ord in Char._semicolons
+    def is_semicolon(self):
+        return self._ord in UnicodeCharacters.semicolons
+
+    def is_question_mark(self):
+        return self._ord in UnicodeCharacters.question_marks
 
     # Builtin methods
     def __str__(self):

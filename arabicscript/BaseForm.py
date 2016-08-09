@@ -270,5 +270,6 @@ base_form = {
     chr(0x08AC): (chr(0x08AC), 2),  # Rohingya Yeh (no dotless alternative )
 }
 
+
 def get_base_form(c):
     return base_form[c]

@@ -7,3 +7,16 @@
 # Python egg files
 /*.egg-info
 /*.egg
+
+# Linux backup files
+*~
+
+# Unversioned files
+.idea/
+__pycache__/
+arabicscript/ArabicShaping/
+
+# Unnecessary files
+personal_readme.txt
+.dropbox
+desktop.ini

@@ -1,4 +1,4 @@
-def _arabic():
+def arabic():
     """Arabic: 0600 — 06FF, Unicode 9.0"""
     characters = set()
     for x in range(0x0600, (0x06FF + 1)):
@@ -7,7 +7,7 @@ def _arabic():
     return characters
 
 
-def _arabic_supplement():
+def arabic_supplement():
     # Arabic Supplement: 0750 — 077F, Unicode 9.0
     characters = set()
     for x in range(0x0750, (0x077F + 1)):
@@ -15,7 +15,7 @@ def _arabic_supplement():
     return characters
 
 
-def _arabic_extended_A():
+def arabic_extended_A():
     """Arabic Extended-A: 08A0 — 08FF, Unicode 9.0"""
     characters = set()
     for x in range(0x08A0, (0x08BD + 1)):
@@ -26,7 +26,7 @@ def _arabic_extended_A():
     return characters
 
 
-def _arabic_presentation_forms_A():
+def arabic_presentation_forms_A():
     """Arabic Presentation Forms-A: FB50 — FDFF, Unicode 9.0"""
     characters = set()
     for x in range(0xFB50, (0xFBC1 + 1)):
@@ -42,7 +42,7 @@ def _arabic_presentation_forms_A():
     return characters
 
 
-def _arabic_presentation_forms_B():
+def arabic_presentation_forms_B():
     """Arabic Presentation Forms-B: FE70 — FEFF, Unicode 9.0"""
     characters = set()
     for x in range(0xFE70, (0xFEFF + 1)):
@@ -53,7 +53,7 @@ def _arabic_presentation_forms_B():
     return characters
 
 
-def _rumi_numeral_symbols():
+def rumi_numeral_symbols():
     """Rumi Numeral Symbols: 10E60 — 10E7F, Unicode 9.0"""
     characters = set()
     for x in range(0x10E60, (0x10E7E + 1)):
@@ -61,7 +61,7 @@ def _rumi_numeral_symbols():
     return characters
 
 
-def _arabic_mathematical_alphabetic_symbols():
+def arabic_mathematical_alphabetic_symbols():
     """Arabic Mathematical Alphabetic Symbols: 1EE00 — 1EEFF, Unicode 9.0"""
     characters = set()
 

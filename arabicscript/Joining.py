@@ -3,22 +3,22 @@
 
 from enum import Enum, unique
 
+
 @unique
 class JoiningType(Enum):
-    """
-    Enum values for joining types of unicode letters
-    """
-    Right_Joining = 1
-    Left_Joining = 2
-    Dual_Joining = 3
+    """Joining types of unicode letters defined by the Unicode standard version 9.0"""
+    Right_Joining = 1  # Letter joins with the letter to its right
+    Left_Joining = 2   # Letter joins with the letter to its left
+    Dual_Joining = 3   # Letter joins with letters to its left and right
     Join_Causing = 4
-    Non_Joining = 5
+    Non_Joining = 5    # Letter does not join
     Transparent = 6
+
 
 @unique
 class JoiningGroup(Enum):
-    """
-    Enum values of joining groups of Arabic letters
+    """Joining groups of Arabic letters defined by the Unicode standard version 9.0.
+    This does not include joining groups of non-Arabic scripts such as Syriac.
     """
     No_Joining_Group = 0
     Alef = 1
