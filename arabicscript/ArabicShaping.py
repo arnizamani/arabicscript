@@ -1,4 +1,4 @@
-from .JoiningGroup import JoiningType, JoiningGroup
+from .Joining import JoiningType, JoiningGroup
 
 joining_groups = {
     0x0600: JoiningGroup.No_Joining_Group,

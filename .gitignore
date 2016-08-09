@@ -6,3 +6,4 @@
 
 # Python egg files
 /*.egg-info
+/*.egg

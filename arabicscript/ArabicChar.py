@@ -2,7 +2,7 @@ from . import ArabicShaping
 from . import BaseForm
 from .ArabicCharacters import ArabicCharacters
 from .Char import Char
-from .JoiningGroup import JoiningType, JoiningGroup
+from .Joining import JoiningType, JoiningGroup
 
 
 class ArabicChar(Char):
