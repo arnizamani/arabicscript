@@ -38,7 +38,7 @@ class ArabChar(Char):
             b = BaseForm.base_form[self._chr][0]
         return ArabChar(b)
 
-    def is_haraka(self):
+    def is_harakat(self):
         """check if character is fatha, kasra or damma"""
         raise NotImplementedError()
 
