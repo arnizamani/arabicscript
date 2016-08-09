@@ -4,11 +4,12 @@ from .ArabicCharacters import ArabicCharacters
 from .Char import Char
 from .Joining import JoiningType, JoiningGroup
 
+_ac = ArabicCharacters()
+
 
 class ArabChar(Char):
     # self._ord
     # self._chr
-    _ac = ArabicCharacters()
 
     def __init__(self, char):
         super(ArabChar, self).__init__(char)
@@ -16,20 +17,20 @@ class ArabChar(Char):
     def joining_type(self):
         """Return character's joining type"""
         joining_type = ArabicShaping.joining_types.get(self._ord)
-        if joining_type is None and self._chr in ArabChar._ac.arabic_presentation_forms():
+        if joining_type is None and self._chr in _ac.arabic_presentation_forms():
             joining_type = JoiningType.Non_Joining
         return joining_type
 
     def joining_group(self):
         """Return character's joining group"""
         joining_group = ArabicShaping.joining_groups.get(self._ord)
-        if joining_group is None and self._chr in ArabChar._ac.arabic_presentation_forms():
+        if joining_group is None and self._chr in _ac.arabic_presentation_forms():
             joining_group = JoiningGroup.No_Joining_Group
         return joining_group
 
     def is_arabic(self):
         """Check if character exists in Unicode's Arabic code blocks"""
-        return self._chr in ArabChar._ac.arabic()
+        return self._chr in _ac.arabic()
 
     def base_form(self):
         """Return the letter's base form, without any dots or marks"""

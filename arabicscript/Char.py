@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 import unicodedata
 
-from .UnicodeCharacters import UnicodeCharacters
+from . import constructors
 
 
 class InvalidCharacter(Exception):
@@ -71,10 +71,10 @@ class Char(object):
         return self._chr.isupper()
 
     def is_semicolon(self):
-        return self._ord in UnicodeCharacters.semicolons
+        return self._ord in constructors.semicolons
 
     def is_question_mark(self):
-        return self._ord in UnicodeCharacters.question_marks
+        return self._ord in constructors.question_marks
 
     # Builtin methods
     def __str__(self):

@@ -32,3 +32,13 @@ class TestChar(TestCase):
         self.assertTrue(Char('a').name())      # An existing character returns non-empty string
         self.assertTrue(Char('ب').name())
         self.assertFalse(Char(0x08C0).name())  # A non-existing character returns empty string
+
+    def test_char_semicolon(self):
+        self.assertTrue(Char(';').is_semicolon())
+        self.assertTrue(Char('؛').is_semicolon())
+        self.assertFalse(Char(',').is_semicolon())
+
+    def test_char_questionmark(self):
+        self.assertTrue(Char('?').is_question_mark())
+        self.assertTrue(Char('؟').is_question_mark())
+        self.assertFalse(Char(',').is_question_mark())
