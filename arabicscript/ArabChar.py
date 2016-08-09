@@ -1,6 +1,6 @@
 from . import BaseForm
-from .ArabicShaping import ArabicShaping
 from .ArabicCharacters import ArabicCharacters
+from .ArabicShaping import ArabicShaping
 from .Char import Char
 from .Joining import JoiningType, JoiningGroup
 
@@ -8,6 +8,8 @@ _ac = ArabicCharacters()
 
 
 class ArabChar(Char):
+    """Class to present a character in the Arabic script, can also represent other characters
+    such as space and punctuation."""
     # self._ord
     # self._chr
 
