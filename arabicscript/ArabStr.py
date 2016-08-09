@@ -1,20 +1,20 @@
-from .ArabicChar import ArabicChar
+from .ArabChar import ArabChar
 
-class ArabicStr(object):
+class ArabStr(object):
     """Class that represents strings containing Arabic text in Unicode"""
 
     def __init__(self, string=""):
         """Intialize ArabicStr from a regular string or another ArabicStr object"""
         if isinstance(string, str):
-            self._str = [ArabicChar(s) for s in string]
-        elif isinstance(string, ArabicStr):
+            self._str = [ArabChar(s) for s in string]
+        elif isinstance(string, ArabStr):
             self._str = string._str
         else:
             raise ValueError()
 
     def base_form(self):
         """Convert all characters to their dotless forms"""
-        result = ArabicStr()
+        result = ArabStr()
         result._str = [c.base_form() for c in self._str ]
         return result
 
@@ -37,7 +37,7 @@ class ArabicStr(object):
         return item in self._str
 
     def __eq__(self, other):
-        if isinstance(other, ArabicStr):
+        if isinstance(other, ArabStr):
             return self._str == other._str
 
         if isinstance(other, str):
