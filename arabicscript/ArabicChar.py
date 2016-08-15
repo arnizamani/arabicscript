@@ -74,6 +74,39 @@ YEH          = 0x064A
 FARSI_YEH    = 0x06CC
 URDU_YEH     = 0x06D2
 
+izlaq_letters = {
+    BEH,
+    REH,
+    FEH,
+    MAGHRIB_FEH,
+    AFRICAN_FEH,
+    LAM,
+    MEEM,
+    NOON,
+    AFRICAN_NOON,
+}
+
+qalqalah_letters = {
+    BEH,
+    JEEM,
+    DAL,
+    TAH,
+    QAF,
+    MAGHRIB_QAF,
+    AFRICAN_QAF,
+}
+
+hamza_letters = {
+    HAMZA,
+    HAMZA_HIGH,
+    HAMZA_ABOVE,
+    HAMZA_BELOW,
+    ALEF_HAMZA_ABOVE,
+    WAW_HAMZA_ABOVE,
+    ALEF_HAMZA_BELOW,
+    YEH_HAMZA_ABOVE,
+}
+
 
 class ArabicChar(ArabChar):
     """Class to present a character of the Arabic language, can also represent other characters
@@ -91,16 +124,7 @@ class ArabicChar(ArabChar):
         raise NotImplementedError
 
     def is_hamza(self):  # Any of the various shapes or carriers of hamza
-        return self._ord in {
-            HAMZA,
-            HAMZA_HIGH,
-            HAMZA_ABOVE,
-            HAMZA_BELOW,
-            ALEF_HAMZA_ABOVE,
-            WAW_HAMZA_ABOVE,
-            ALEF_HAMZA_BELOW,
-            YEH_HAMZA_ABOVE,
-        }
+        return self._ord in hamza_letters
 
     def is_halqi_letter(self):  # Ḥurūf ḥalqīyah
         raise NotImplementedError
@@ -108,32 +132,11 @@ class ArabicChar(ArabChar):
     def is_tarafi_letter(self):  # Ḥurūf ṭarafīyah: Reh, Lam, Noon
         raise NotImplementedError
 
-    def is_maddah_letter(self):  # Ḥurūf maddah: Alef, Waw, Yeh
-        raise NotImplementedError
-
     def is_istela_letter(self):  # Letters with isti‘lā’
         raise NotImplementedError
 
     def is_izlaq_letter(self):  # Letters with Idhlāq: Beh, Reh, Feh, Lam, Meem, Noon
-        return self._ord in {
-            BEH,
-            REH,
-            FEH,
-            MAGHRIB_FEH,
-            AFRICAN_FEH,
-            LAM,
-            MEEM,
-            NOON,
-            AFRICAN_NOON,
-        }
+        return self._ord in izlaq_letters
 
     def is_qalqalah_letter(self):
-        return self._ord in {
-            BEH,
-            JEEM,
-            DAL,
-            TAH,
-            QAF,
-            MAGHRIB_QAF,
-            AFRICAN_QAF,
-        }
+        return self._ord in qalqalah_letters

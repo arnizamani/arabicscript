@@ -70,3 +70,49 @@ class ArabicCharacters(object):
         return {chr(c) for c in meems}
 
     honorifics = {0x0610, 0x0611, 0x0612, 0x0613, 0x0614}
+
+    sukun_letters = {0x0652,  # Sukun
+                     0x06E1,  # Dotless head of khah
+                     0x08FF,  # Sideways noon ghunna
+                     }
+
+    waqf_signs = {0x0615,  # Small high tah
+                  0x0617,  # Small high zain
+                  0x061E,  # Triple dot punctuation mark
+                  0x06D6,  # Small high salay
+                  0x06D7,  # Small high qalay
+                  0x06D8,  # Small high meem initial form
+                  0x06D9,  # Small high lam alef
+                  0x06DA,  # Small high jeem
+                  0x06DB,  # Small high three dots
+                  0x06DC,  # Small high seen
+                  0x08D5,  # Small high sad
+                  0x08D7,  # Small high qaf
+                  0x08DD,  # Small high word sakta
+                  0x08DE,  # Small high word qif
+                  0x08DF,  # Small high word waqfa
+                  }
+
+    harakat = {0x0618,  # Small fatha
+               0x0619,  # Small damma
+               0x061A,  # Small kasra
+               0x064E,  # Fatha
+               0x064F,  # Damma
+               0x0650,  # Kasra
+               0x08E4,  # Curly fatha
+               0x08E5,  # Curly damma
+               0x08E6,  # Curly kasra
+               }
+
+    tanweens = {0x064B,  # Fathatan
+                0x064C,  # Dammatan
+                0x064D,  # Kasratan
+                0x08E7,  # Curly fathatan
+                0x08E8,  # Curly dammatan
+                0x08E9,  # Curly kasratan
+                0x08F0,  # Open fathatan
+                0x08F1,  # Open dammatan
+                0x08F2,  # Open kasratan
+                }
+
+    shadda = {0x0651}

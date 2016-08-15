@@ -19,14 +19,14 @@ class ArabChar(Char):
     def joining_type(self):
         """Return character's joining type"""
         joining_type = ArabicShaping.joining_types.get(self._ord)
-        if joining_type is None and self._chr in _ac.arabic_presentation_forms():
+        if joining_type is None:
             joining_type = JoiningType.Non_Joining
         return joining_type
 
     def joining_group(self):
         """Return character's joining group"""
         joining_group = ArabicShaping.joining_groups.get(self._ord)
-        if joining_group is None and self._chr in _ac.arabic_presentation_forms():
+        if joining_group is None:
             joining_group = JoiningGroup.No_Joining_Group
         return joining_group
 
@@ -43,16 +43,13 @@ class ArabChar(Char):
 
     def is_harakat(self):
         """check if character is fatha, kasra or damma"""
-        raise NotImplementedError()
+        return self._ord in ArabicCharacters.harakat
 
     def is_tanween(self):
-        raise NotImplementedError()
-
-    def is_regular_tanween(self):
-        raise NotImplementedError()
+        return self._ord in ArabicCharacters.tanweens
 
     def is_sukun(self):
-        raise NotImplementedError()
+        return self._ord in ArabicCharacters.sukun_letters
 
     def is_honorific(self):
         """Check if character is an honorific mark"""
