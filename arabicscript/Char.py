@@ -70,6 +70,9 @@ class Char(object):
     def isupper(self):
         return self._chr.isupper()
 
+    def is_comma(self):
+        return self._ord in constructors.commas
+
     def is_semicolon(self):
         return self._ord in constructors.semicolons
 
@@ -104,13 +107,41 @@ class Char(object):
             return self._ord == other._ord
 
     def __lt__(self, other):
-        return self._ord < other._ord
+        if isinstance(other, Char):
+            return self._ord < other._ord
+
+        if isinstance(other, str):
+            return self._chr < other
+
+        if isinstance(other, int):
+            return self._ord < other
 
     def __gt__(self, other):
-        return self._ord > other._ord
+        if isinstance(other, Char):
+            return self._ord > other._ord
+
+        if isinstance(other, str):
+            return self._chr > other
+
+        if isinstance(other, int):
+            return self._ord > other
 
     def __le__(self, other):
-        return self._ord <= other._ord
+        if isinstance(other, Char):
+            return self._ord <= other._ord
+
+        if isinstance(other, str):
+            return self._chr <= other
+
+        if isinstance(other, int):
+            return self._ord <= other
 
     def __ge__(self, other):
-        return self._ord >= other._ord
+        if isinstance(other, Char):
+            return self._ord >= other._ord
+
+        if isinstance(other, str):
+            return self._chr >= other
+
+        if isinstance(other, int):
+            return self._ord >= other

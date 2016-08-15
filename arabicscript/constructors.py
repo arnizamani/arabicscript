@@ -113,6 +113,22 @@ def meem_like(self):
              }
     return {chr(c) for c in meems}
 
+commas = {
+    0x002C,  # COMMA
+    0x00B7,  # MIDDLE DOT (used as a comma in Georgian)
+    0x055D,  # ARMENIAN COMMA
+    0x060C,  # ARABIC COMMA
+    0x07F8,  # NKO COMMA
+    0X1363,  # ETHIOPIC COMMA
+    0X1802,  # MONGOLIAN COMMA
+    0X1808,  # MONGOLIAN MANCHU COMMA
+    0x2E41,  # REVERSED COMMA
+    0XA4FE,  # LISU PUNCTUATION COMMA
+    0XA60D,  # VAI COMMA
+    0XA6F5,  # BAMUM COMMA
+    0xFF0C,  # FULL-WIDTH COMMA
+}
+
 semicolons = {
     0x003B,  # SEMICOLON
     0x061B,  # ARABIC SEMICOLON
