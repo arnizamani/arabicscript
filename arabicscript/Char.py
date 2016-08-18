@@ -71,6 +71,8 @@ class Char(object):
         return self._chr.isupper()
 
     def is_comma(self):
+        """Check if character functions as a comma in any script.
+        Functional comma symbol is language-dependent. This function provides only partial support."""
         return self._ord in constructors.commas
 
     def is_semicolon(self):

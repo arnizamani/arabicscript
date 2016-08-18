@@ -3,6 +3,8 @@ from .ArabicCharacters import ArabicCharacters
 from .ArabicShaping import ArabicShaping
 from .Char import Char
 from .Joining import JoiningType, JoiningGroup
+# TODO: Implement text normalization for Arabic according to Unicode normalization schemes
+# TODO: Implement algorithms to find shape of a character (initial, medial, final, isolated)
 
 _ac = ArabicCharacters()
 
@@ -46,9 +48,11 @@ class ArabChar(Char):
         return self._ord in ArabicCharacters.harakat
 
     def is_tanween(self):
+        """Check if character is any form of tanween"""
         return self._ord in ArabicCharacters.tanweens
 
     def is_sukun(self):
+        """Check if character represents sukun in Arabic"""
         return self._ord in ArabicCharacters.sukun_letters
 
     def is_honorific(self):

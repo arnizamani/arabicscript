@@ -55,3 +55,13 @@ class JoiningGroup(Enum):
     African_Feh = 32
     African_Qaf = 33
     African_Noon = 34
+
+
+@unique
+class JoiningForm(Enum):
+    """Joining forms of Arabic letters"""
+    No_Joining_Form = 0
+    Isolated = 1
+    Initial = 2
+    Medial = 3
+    Final = 4

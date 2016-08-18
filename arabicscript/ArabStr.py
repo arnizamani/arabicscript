@@ -5,7 +5,7 @@ class ArabStr(object):
     """Class that represents strings containing Arabic text in Unicode"""
 
     def __init__(self, string=""):
-        """Intialize ArabicStr from a regular string or another ArabicStr object"""
+        """Initialize ArabicStr from a regular string or another ArabicStr object"""
         if isinstance(string, str):
             self._str = [ArabChar(s) for s in string]
         elif isinstance(string, ArabStr):
