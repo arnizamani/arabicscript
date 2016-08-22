@@ -4,6 +4,8 @@ from . import constructors
 class ArabicCharacters(object):
     """Functions returning collections of Arabic characters, for Unicode 9.0"""
 
+    combining_marks = constructors.combining_marks()
+
     def __init__(self):
         """ArabicCharacters(): pre-construct all sets of characters"""
         self._arabic = constructors.arabic()

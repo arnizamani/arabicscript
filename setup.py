@@ -2,7 +2,7 @@
 from setuptools import setup
 
 package_name = 'arabicscript'
-current_version = '0.1.2'
+current_version = '0.1.3'
 development_status = 'Development Status :: 2 - Pre-Alpha'
 
 author_name = 'Abdul Rahim Nizamani'

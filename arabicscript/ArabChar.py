@@ -58,3 +58,7 @@ class ArabChar(Char):
     def is_honorific(self):
         """Check if character is an honorific mark"""
         return self._ord in ArabicCharacters.honorifics
+
+    def is_combining(self):
+        """Check if the character is a combining mark"""
+        return self._chr in ArabicCharacters.combining_marks

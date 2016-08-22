@@ -162,3 +162,22 @@ question_marks = {
     0x11143,  # CHAKMA QUESTION MARK
     0xE003F,  # TAG QUESTION MARK
 }
+
+def combining_marks():
+    characters = set()
+    for x in range(0x0610, (0x061A + 1)):
+        characters.add(chr(x))
+    for x in range(0x064B, (0x065F + 1)):
+        characters.add(chr(x))
+    characters.add(chr(0x0670))
+    for x in range(0x06D6, (0x06DC + 1)):
+        characters.add(chr(x))
+    for x in range(0x06DF, (0x06E4 + 1)):
+        characters.add(chr(x))
+    for x in range(0x06E7, (0x06ED + 1)):
+        characters.add(chr(x))
+    characters.remove(chr(0x06E9))
+    for x in range(0x08D4, (0x08FF + 1)):
+        characters.add(chr(x))
+    characters.remove(chr(0x08E2))
+    return characters
