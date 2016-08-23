@@ -64,7 +64,7 @@ class ArabStr(object):
                 elif next_letter.joining_type() in [JoiningType.Dual_Joining, JoiningType.Right_Joining]:
                     return JoiningForm.Medial
                 elif next_letter.joining_type() is JoiningType.Non_Joining:
-                    return JoiningForm.Initial
+                    return JoiningForm.Final
         return JoiningForm.No_Joining_Form
 
     def __str__(self):
