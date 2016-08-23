@@ -44,28 +44,34 @@ class ArabStr(object):
         prev_letter = self._str[index - 1] if index > 0 else None
         next_letter = self._str[index + 1] if index < (len(self._str) - 1) else None
 
+        prev_letter_connects = prev_letter and prev_letter.joining_type() in \
+                                               [JoiningType.Dual_Joining, JoiningType.Left_Joining]
+        next_letter_connects = next_letter and next_letter.joining_type() in \
+                                               [JoiningType.Dual_Joining, JoiningType.Right_Joining]
+
         if joining_type is JoiningType.Right_Joining:
-            if not prev_letter:
-                return JoiningForm.Isolated
-            elif prev_letter.joining_type() is JoiningType.Dual_Joining:
+            if prev_letter_connects:
                 return JoiningForm.Final
             else:
                 return JoiningForm.Isolated
 
+        if joining_type is JoiningType.Left_Joining:
+            if next_letter_connects:
+                return JoiningForm.Initial
+            else:
+                return JoiningForm.Isolated
+
         if joining_type is JoiningType.Dual_Joining:
-            if not prev_letter or prev_letter.joining_type() is not JoiningType.Dual_Joining:  # Initial or Isolated
-                if not next_letter:
-                    return JoiningForm.Isolated
-                elif next_letter.joining_type() in [JoiningType.Dual_Joining, JoiningType.Right_Joining]:
-                    return JoiningForm.Initial
-            elif prev_letter.joining_type() is JoiningType.Dual_Joining:  # Medial or Final
-                if not next_letter:
-                    return JoiningForm.Final
-                elif next_letter.joining_type() in [JoiningType.Dual_Joining, JoiningType.Right_Joining]:
+            if prev_letter_connects:
+                if next_letter_connects:
                     return JoiningForm.Medial
-                elif next_letter.joining_type() is JoiningType.Non_Joining:
+                else:
                     return JoiningForm.Final
-        return JoiningForm.No_Joining_Form
+            else:
+                if next_letter_connects:
+                    return JoiningForm.Initial
+                else:
+                    return JoiningForm.Isolated
 
     def __str__(self):
         """Convert to string and return"""
