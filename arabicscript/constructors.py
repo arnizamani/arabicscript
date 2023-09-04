@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 def arabic():
     """Arabic: 0600 — 06FF, Unicode 9.0"""
     characters = set()

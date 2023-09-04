@@ -31,7 +31,7 @@ class TestChar(TestCase):
     def test_char_name(self):
         self.assertTrue(Char('a').name())      # An existing character returns non-empty string
         self.assertTrue(Char('ب').name())
-        self.assertFalse(Char(0x08C0).name())  # A non-existing character returns empty string
+        self.assertFalse(Char(0xFBD0).name())  # A non-existing character returns empty string
 
     def test_char_semicolon(self):
         self.assertTrue(Char(';').is_semicolon())

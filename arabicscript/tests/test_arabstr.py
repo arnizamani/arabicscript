@@ -37,3 +37,20 @@ class TestArabStr(TestCase):
         self.assertEqual(string.joining_form(25), JoiningForm.Initial)  # Lam
         self.assertEqual(string.joining_form(26), JoiningForm.Medial)  # Lam
         self.assertEqual(string.joining_form(27), JoiningForm.Final)  # Heh
+
+    def test_normalize_presentation_forms(self):
+        self.assertEqual(
+            ArabStr('ﭑ').normalize_presentation_forms(), 'ٱ'
+        )
+        self.assertEqual(
+            ArabStr('ﻻ').normalize_presentation_forms(), 'لا'
+        )
+        self.assertEqual(
+            ArabStr('ﷺ').normalize_presentation_forms(), 'صلى الله عليه وسلم'
+        )
+        self.assertEqual(
+            ArabStr('محمدﷺ').normalize_presentation_forms(), 'محمد صلى الله عليه وسلم'
+        )
+        self.assertEqual(
+            ArabStr('محمد ﷺ').normalize_presentation_forms(), 'محمد صلى الله عليه وسلم'
+        )

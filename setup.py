@@ -23,7 +23,7 @@ setup(
     classifiers=[development_status,
                  'Intended Audience :: Developers',
                  'License :: OSI Approved :: GNU General Public License (GPL)',
-                 'Programming Language :: Python :: 3.5',
+                 'Programming Language :: Python :: 3.10',
                  'Topic :: Text Processing :: Linguistic',],
     keywords=['Arabic', 'writing script', 'Unicode', 'text processing'],
     url=package_url,

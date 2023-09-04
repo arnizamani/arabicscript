@@ -13,7 +13,8 @@ class ArabicCharacters(object):
         self._arabic_extended_A = constructors.arabic_extended_A()
         self._arabic_presentation_forms_A = constructors.arabic_presentation_forms_A()
         self._arabic_presentation_forms_B = constructors.arabic_presentation_forms_B()
-        self._arabic_presentation_forms = set.union(self._arabic_presentation_forms_A, self._arabic_presentation_forms_B)
+        self._arabic_presentation_forms = set.union(self._arabic_presentation_forms_A,
+                                                    self._arabic_presentation_forms_B)
         self._rumi_numeral_symbols = constructors.rumi_numeral_symbols()
         self._arabic_mathematical_alphabetic_symbols = \
             constructors.arabic_mathematical_alphabetic_symbols()

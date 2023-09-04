@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 # Format:
 # Dictionary where
 # key: is an Arabic letter (only letters are included, no other characters such as

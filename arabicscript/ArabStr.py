@@ -1,6 +1,6 @@
 from .ArabChar import ArabChar
 from .Joining import JoiningForm, JoiningType, JoiningGroup
-
+from .presentationforms import normalize_presentation_forms
 
 class ArabStr(object):
     """Class that represents strings containing Arabic text in Unicode"""
@@ -16,10 +16,24 @@ class ArabStr(object):
         else:
             raise ValueError()
 
+    def normalize_presentation_forms(self):
+        """Convert characters from presentation forms into their letter equivalents."""
+        string = str(self)
+        converted = normalize_presentation_forms(string)
+        self._str = [ArabChar(s) for s in converted]
+        return self
+
+    def dotless_form(self):
+        """Convert all characters to their dotless forms"""
+        result = ArabStr()
+        result._str = [c.base_form() for c in self._str]
+        return result
+
+    @DeprecationWarning
     def base_form(self):
         """Convert all characters to their dotless forms"""
         result = ArabStr()
-        result._str = [c.base_form() for c in self._str ]
+        result._str = [c.base_form() for c in self._str]
         return result
 
     def joining_form(self, index):

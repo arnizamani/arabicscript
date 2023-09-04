@@ -15,8 +15,10 @@
 .idea/
 __pycache__/
 arabicscript/ArabicShaping/
+**/.ipynb_checkpoints
 
 # Unnecessary files
 personal_readme.txt
 .dropbox
 desktop.ini
+

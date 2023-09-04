@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from .ArabChar import ArabChar
 
 HAMZA            = 0x0621

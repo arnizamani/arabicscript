@@ -36,6 +36,15 @@ class ArabChar(Char):
         """Check if character exists in Unicode's Arabic code blocks"""
         return self._chr in _ac.arabic()
 
+    def dotless_form(self):
+        """Return the letter's base form, without any dots or marks"""
+        b = self
+        if self._chr in BaseForm.base_form:
+            b = BaseForm.base_form[self._chr][0]
+        return ArabChar(b)
+
+
+    @DeprecationWarning
     def base_form(self):
         """Return the letter's base form, without any dots or marks"""
         b = self
