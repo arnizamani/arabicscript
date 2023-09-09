@@ -820,7 +820,7 @@ PRESENTATION_FORMS = {
 }
 
 def normalize_presentation_forms(string: str) -> str:
-    """Convert characters from presentation forms into their letter equivalents."""
+    """Convert characters from presentation forms into their standard letter equivalents."""
 
     indexed_chars = list(zip(list(range(len(string))), [x for x in string]))
 
